@@ -1,53 +1,28 @@
 class Dog
-  attr_accessor :leash, :plastic_bag, :walking, :vet
 
+  attr_accessor :name, :breed,:leash, :plastic_bag, :walking, :vet, :vet_checkup
+
+  # def initialize(name, breed, owner_name)
   def initialize(name, breed, owner_name)
-    @name = name
-    @breed = breed
-    @owner = owner_name
-    @leash = false
-    @plastic_bag = false
-    @walking = false
-    @vet_checkup = false
+    @name = name # this returns name of the dog
+    @breed = breed # returns the breed classification
+    @owner = Owner.new(owner_name, self) # returns Owner when #class is called on #owner 
   end
 
-  def name
-    @name
+  def owner
+     @owner
   end
 
   def bark
     "Woof!"
   end
 
-  def breed
-    @breed
-  end
-
-  def owner
-    @owner
-  end
-
-  def walking?(owner)
-    owner.dog.walking
+  def walking?
+    @owner.walk
   end
 
   def vet_checkup?(owner)
     owner.dog.vet_checkup
   end
 
-  # Refactor the following methods as methods in the Owner class!
-
-  def walk(owner)
-    # REFACTOR!
-    owner.dog.leash = true
-    owner.dog.plastic_bag = true
-    owner.dog.walking = true
-  end
-
-  def vet_checkup(owner)
-    # REFACTOR!
-    owner.dog.leash = true
-    owner.dog.plastic_bag = true
-    owner.dog.vet_checkup = true
-  end
-end
+end # ends Dog class
