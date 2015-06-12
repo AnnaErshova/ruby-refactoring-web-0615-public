@@ -9,8 +9,8 @@ attr_accessor :name, :dog
   end
 
   def prepare_items
-    @dog.leash = true
-    @dog.plastic_bag = true    
+    dog.leash = true
+    dog.plastic_bag = true    
   end
 
   def walk
@@ -20,11 +20,11 @@ attr_accessor :name, :dog
 
   def vet_checkup
     prepare_items
-    @dog.vet_checkup = true
+    dog.vet_checkup = true
   end
 
   def walking? # walk takes the dog on a walk
-    @dog.walking?
+    dog.walking?
   end
 
 end # ends Owner class

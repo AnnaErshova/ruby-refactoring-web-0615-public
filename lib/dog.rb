@@ -18,7 +18,7 @@ class Dog
   end
 
   def walking?
-    @owner.walk
+    owner.walk
   end
 
   def vet_checkup?(owner)
