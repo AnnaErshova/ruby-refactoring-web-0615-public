@@ -18,13 +18,13 @@ attr_accessor :name, :dog
     dog.walking = true
   end
 
+  def walking? # walk takes the dog on a walk
+    dog.walking?
+  end
+
   def vet_checkup
     prepare_items
     dog.vet_checkup = true
-  end
-
-  def walking? # walk takes the dog on a walk
-    dog.walking?
   end
 
 end # ends Owner class
